@@ -1,0 +1,32 @@
+---------------------------------------------------------
+select using HQL
+---------------------------------------------------------
+
+Query query = session.createQuery("from Employee");
+
+List list =query.list();
+
+
+
+---------------------------------------------------------
+Update using HQL
+---------------------------------------------------------
+
+Query query = session.createQuery("update Employee e set e.employeeName=? where e.employeeId=?");
+
+query.setParameter(0,"James");
+query.setParameter(1,7);
+
+int result = query.executeUpdate();
+
+
+
+---------------------------------------------------------
+delete using HQL
+---------------------------------------------------------
+
+Query query = session.createQuery("delete from Employee e where e.employeeId=?");
+
+query.setParameter(0,110);
+
+int result = query.executeUpdate();

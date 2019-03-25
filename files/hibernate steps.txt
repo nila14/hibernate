@@ -1,0 +1,64 @@
+Mapping file:
+--------------------------------------
+
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="" table="">
+      
+    </class>
+</hibernate-mapping>
+
+
+
+
+-------------------------------------------
+
+hibernate.cfg.xml
+-------------------------------------------
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/companydb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <property name="hbm2ddl.auto">create</property>  
+        <property name="show_sql">true</property>
+        <mapping resource=""></mapping>
+
+    </session-factory>
+</hibernate-configuration>
+
+
+
+
+
+-------------------------------------------
+Steps:
+-------------------------------------------
+
+SessionFactory sessionFactory= new Configuration().configure().buildSessionFactory();
+Session session = sessionFactory.openSession();
+Transaction transaction  = session.beginTransaction();
+
+session.save(object);
+
+transaction.commit();
+session.close(); 
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+-----------------------------------------------------------
+Sorting using HCQL (Hibernate Criteria Query Language)
+-----------------------------------------------------------
+
+Criteria criteria = session.createCriteria(Employee.class)
+.addOrder(Order.asc("employeeName") );
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+.addOrder(Order.desc("employeeName") );
+
+
+
+-----------------------------------------------------------
+comparison operations using HCQL (Hibernate Criteria Query Language)
+-----------------------------------------------------------
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+    .add(Restrictions.eq("salary", 10000));
+
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+    .add(Restrictions.lt("salary", 10000));
+
+
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+    .add(Restrictions.le("salary", 10000));
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+    .add(Restrictions.gt("salary", 10000));
+
+
+Criteria criteria = session.createCriteria(Employee.class)
+    .add(Restrictions.ge("salary", 10000));

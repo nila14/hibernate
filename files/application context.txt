@@ -1,0 +1,6 @@
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+ApplicationContext context = new ClassPathXmlApplicationContext("schemaname.xml");
+
+context.getBean("beanname");
